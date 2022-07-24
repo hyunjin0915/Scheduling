@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.view.WindowManager
 import android.widget.EditText
+import org.techtown.scheduling.databinding.SchediaolgBinding
 
 
 class CustomDialog(context: Context) {

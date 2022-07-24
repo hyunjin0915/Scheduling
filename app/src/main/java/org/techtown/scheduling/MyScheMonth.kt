@@ -12,6 +12,7 @@ import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import org.techtown.scheduling.databinding.SchediaolgBinding
 
 
 class MyScheMonth : AppCompatActivity() {
@@ -25,12 +26,13 @@ class MyScheMonth : AppCompatActivity() {
     lateinit var diaryTextView: TextView
     lateinit var diaryContent:TextView
     lateinit var contextEditText: EditText
+    lateinit var testBtn: Button
 
-
+    lateinit var binding:SchediaolgBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_my_sche_month)
 
         // UI값 생성
         calendarView=findViewById(R.id.calendarView)
@@ -40,6 +42,17 @@ class MyScheMonth : AppCompatActivity() {
         updateBtn=findViewById(R.id.updateBtn)
         diaryContent=findViewById(R.id.diaryContent)
         contextEditText=findViewById(R.id.contextEditText)
+
+        testBtn=findViewById(R.id.testBtn)
+        binding = SchediaolgBinding.inflate(layoutInflater)
+        val view2 = binding.root
+        setContentView(view2)
+
+        testBtn.setOnClickListener{
+            val dialog = CustomDialog(this)
+            dialog.showDialog()
+
+        }
 
 
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
