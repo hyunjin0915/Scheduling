@@ -12,7 +12,6 @@ import android.widget.CalendarView
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import org.techtown.scheduling.databinding.SchediaolgBinding
 
 
 class MyScheMonth : AppCompatActivity() {
@@ -28,7 +27,6 @@ class MyScheMonth : AppCompatActivity() {
     lateinit var contextEditText: EditText
     lateinit var testBtn: Button
 
-    lateinit var binding:SchediaolgBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,14 +42,17 @@ class MyScheMonth : AppCompatActivity() {
         contextEditText=findViewById(R.id.contextEditText)
 
         testBtn=findViewById(R.id.testBtn)
-        binding = SchediaolgBinding.inflate(layoutInflater)
-        val view2 = binding.root
-        setContentView(view2)
+
 
         testBtn.setOnClickListener{
-            val dialog = CustomDialog(this)
+            val dialog = scheDialog(this)
             dialog.showDialog()
+            dialog.setOnClickListener(object : scheDialog.OnDialogClickListener{
+                override fun onClicked(name: String)
+                {
 
+                }
+            })
         }
 
 
@@ -66,13 +67,13 @@ class MyScheMonth : AppCompatActivity() {
             contextEditText.setText("")
             checkDay(year, month, dayOfMonth, userID)
 
-            val dialog = CustomDialog(this)
+            /*val dialog = CustomDialog(this)
             dialog.showDialog()
             dialog.setOnClickListener(object : CustomDialog.OnDialogClickListener {
                 override fun onClicked(name: String) {
                     //  textview.text = name
                 }
-            })
+            })*/
         }
 
         saveBtn.setOnClickListener {

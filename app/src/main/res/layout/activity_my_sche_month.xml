@@ -7,6 +7,15 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
+    <Button
+        android:id="@+id/testBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="277dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="wrap_content"
@@ -34,13 +43,16 @@
         android:id="@+id/contextEditText"
         android:layout_width="0dp"
         android:layout_height="116dp"
-        android:inputType="textMultiLine"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
-        app:layout_constraintTop_toBottomOf="@+id/diaryTextView" android:layout_marginTop="16dp"
-        android:hint="내용을 입력하세요." android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="8dp" android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-        android:visibility="invisible"/>
+        android:hint="내용을 입력하세요."
+        android:inputType="textMultiLine"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diaryTextView" />
 
     <TextView
         android:layout_width="0dp"
@@ -84,24 +96,13 @@
         android:visibility="invisible"/>
 
     <Button
-        android:text="삭제"
+        android:id="@+id/deleteBtn"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
-        android:id="@+id/deleteBtn"
-        app:layout_constraintBaseline_toBaselineOf="@+id/updateBtn"
-        app:layout_constraintEnd_toEndOf="@+id/saveBtn"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:visibility="invisible">
-    </Button>
-
-    <Button
-        android:id="@+id/testBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="277dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="삭제"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/updateBtn"
+        app:layout_constraintEnd_toEndOf="@+id/saveBtn"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
